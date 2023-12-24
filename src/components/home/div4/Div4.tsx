@@ -1,5 +1,22 @@
 import { BiChevronDown } from 'react-icons/bi';
 import { IoMdDownload } from 'react-icons/io';
+import { Tooltip, Cell, BarChart, Bar, XAxis, YAxis } from 'recharts';
+
+const revenueData = [
+  { month: 'Jun \'23', amount: 120000 },
+  { month: 'Jul \'23', amount: 150000 },
+  { month: 'Aug \'23', amount: 180000 },
+];
+
+const COLORS = ['#495A62', '#495A62', '#495A62'];
+const studCOLORS = ['#6E7B83', '#6E7B83', '#6E7B83'];
+
+const studentData = [
+  { month: 'Jun \'23', amount: 150000 },
+  { month: 'Jul \'23', amount: 170000 },
+  { month: 'Aug \'23', amount: 100000 },
+];
+
 
 
 const Div4 = () => {
@@ -29,8 +46,36 @@ const Div4 = () => {
     </button>
         </div>
       </div>
-      <div className="h-7/8">
-        Div 3 (Bottom)
+      <div className="h-7/8 flex justify-center">
+        <div className='border-r border-gray-300 items-center py-2'>
+            Revenue
+            <BarChart width={250} height={200} data={revenueData}>
+          <XAxis dataKey="month" />
+          <YAxis hide={true} />
+          <Tooltip />
+          <Bar dataKey="amount" fill="#8884d8">
+            {revenueData.map(( entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Bar>
+        </BarChart>
+        FEE RECEIVED
+        </div>
+        <div className='items-center py-2 px-4'>
+            Students
+             <BarChart width={250} height={200} data={studentData}>
+          <XAxis dataKey="month" />
+          <YAxis hide={true} />
+          <Tooltip />
+          <Bar dataKey="amount" fill="#8884d8">
+            {revenueData.map(( entry, index) => (
+              <Cell key={`cell-${index}`} fill={studCOLORS[index % studCOLORS.length]} />
+            ))}
+          </Bar>
+        </BarChart>
+        
+        ACTIVE STUDENTS
+        </div>
       </div>
     </div>
   )

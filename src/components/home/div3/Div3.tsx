@@ -1,4 +1,12 @@
 import { BiChevronDown } from 'react-icons/bi';
+import { PieChart, Pie, Legend, Tooltip, Cell } from 'recharts';
+
+const data = [
+  { name: 'AMOUNT RECEIVED', value: 624000 },
+  { name: 'AMOUNT PENDING', value: 334000 },
+];
+
+const COLORS = ['#495A62', '#EC7471'];
 
 const Div3 = () => {
   return (
@@ -23,7 +31,23 @@ const Div3 = () => {
     </div>
       </div>
       <div className="h-7/8">
-        Div 3 (Bottom)
+         <PieChart width={400} height={250}>
+        <Pie
+          data={data}
+          cx={200}
+          cy={100}
+          innerRadius={30}
+          outerRadius={80}
+          fill="#8884d8"
+          dataKey="value"
+        >
+          {data.map(( entry, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip />
+        <Legend />
+      </PieChart>
       </div>
     </div>
   );

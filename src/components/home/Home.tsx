@@ -6,13 +6,23 @@ import Div5 from "./div5/Div5";
 
 const Home = () => {
   return (
-    <div className="grid grid-cols-2 grid-rows-2 gap-2">
-      <div className="bg-white py-4"><Div1 /></div>
-      <div className="bg-white"><Div2 /></div>
-      <div className="bg-white"><Div3 /></div>
-      <div className="bg-white"> <Div4 /></div>
-      <div className="bg-white col-span-2 row-span-2"><Div5 /></div>
-    </div>
+<>
+
+
+<div className="flex flex-col gap-2">
+  <div className="flex ">
+    <div className="py-4 w-1/2 bg-white mx-2"><Div1 /></div>
+    <div className=" w-1/2 bg-white"><Div2 /></div>
+  </div>
+  <div className="flex ">
+    <div className="w-1/2 mx-2 bg-white"><Div3 /></div>
+    <div className="w-1/2 bg-white"><Div4 /></div>
+  </div>
+  <div className="bg-white"><Div5 /></div>
+</div>
+
+
+</>
   );
 }
 
