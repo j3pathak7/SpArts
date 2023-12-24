@@ -2,7 +2,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Menu from './components/menu/Menu';
 import Home from './components/home/Home';
-import { FaBars } from 'react-icons/fa';
+
 
 function App() {
 
