@@ -1,4 +1,3 @@
-
 import { FaChartBar, FaGraduationCap, FaUsers, FaMoneyBillAlt, FaSearch, FaUsersCog, FaCalendarAlt } from 'react-icons/fa';
 
 const Menu = () => {
@@ -15,7 +14,11 @@ const Menu = () => {
       </div>
       <div className="mb-6 text-left font-bold">More</div>
       <div className="flex items-center mb-6">
-        <input type="text" className="mr-2 border-b-2 border-gray-400 px-2 py-1 focus:outline-none focus:border-gray-500 rounded-full" placeholder="Enter student name" />
+        <input
+          type="text"
+          className="w-full border-b-2 border-gray-400 px-2 py-1 focus:outline-none focus:border-gray-500 rounded-full text-gray-900"
+          placeholder="Enter student name"
+        />
       </div>
       <div className="flex items-center mb-6">
         <FaUsers className="mr-2" /> {/* Users icon */}

@@ -1,30 +1,30 @@
-import Navbar from './components/navbar/Navbar'
-import './App.css'
-import Footer from './components/footer/Footer'
-import Menu from './components/menu/Menu'
-import Home from './components/home/Home'
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
+import Menu from './components/menu/Menu';
+import Home from './components/home/Home';
+import { FaBars } from 'react-icons/fa';
 
 function App() {
-  
 
+  
   return (
     <>
       <div className="min-h-screen mx-0 px-0">
-      <Navbar />
-      <div className="flex">
-        {/* Menu component with fixed width (e.g., w-1/4) */}
-        <div className="w-1/5 text-white">
-          <Menu />
+        <Navbar />
+        <div className="flex flex-col md:flex-row">
+          {/* Responsive Menu component */}
+          <div className="w-full md:w-1/4 lg:w-1/6 p-4 bg-gray-700 text-white">
+            <Menu />
+          </div>
+          {/* Responsive Home component */}
+          <div className="flex-1 p-4">
+            <Home />
+          </div>
         </div>
-        {/* Home component takes the remaining space */}
-        <div className="flex-1">
-          <Home />
-        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
